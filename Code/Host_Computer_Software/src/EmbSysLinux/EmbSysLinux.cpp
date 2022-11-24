@@ -91,7 +91,7 @@ void EmbSysLinux::serialMonitor(){
     {
         data.val1 = 1;
         data.val2 = 1;
-        data.id = 1
+        data.id = 1;
         data.pktn = 1;
         while(true)
         {                                                                   // Read incoming data routine (depends on definition of Node, expected to read data in hex format)
