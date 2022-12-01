@@ -13,7 +13,6 @@ class Sensor {
 	protected:
 		int getID();
 		void setID(int);
-		virtual void readSensor() = 0;		// pure virtual function
 };
 
 #endif /* _SENSOR_HPP_ */
