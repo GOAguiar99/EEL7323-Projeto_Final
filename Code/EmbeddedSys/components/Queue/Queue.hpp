@@ -20,7 +20,7 @@ public:
     Queue();
     ~Queue();
 
-    void enqueue(uint32_t);
+    void enqueue(uint32_t data);
     void dequeue();
     
 };
