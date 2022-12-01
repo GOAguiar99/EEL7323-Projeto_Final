@@ -70,7 +70,7 @@ UART::UART_Write(unsigned char* tx_buffer, size_t size)
 	}
 }
 
-UART::UART_Read(unsigned char* rx_buffer)
+int UART::UART_Read(unsigned char* rx_buffer)
 {
 	if (serial_port != -1)
 	{
@@ -80,15 +80,20 @@ UART::UART_Read(unsigned char* rx_buffer)
 		{
 			//An error occured (will occur if there are no bytes)
 			cout << "Error reading " <<  strerror(errno) << endl;
+			
+			return -1;
 		}
 		else if (rx_length == 0)
 		{
 			//No data waiting
+			return 0;
 		}
 		else
 		{
 			//Bytes received
 			rx_buffer[rx_length] = '\0';
+			
+			return 1;
 		}
 	}
 }

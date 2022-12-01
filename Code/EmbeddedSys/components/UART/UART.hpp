@@ -15,13 +15,11 @@
 #define UART_TX_BUFFER_MASK (UART_TX_BUFFER_SIZE - 1) 
 
 class UART
-{
-	private:
-		int serial_port;
-	
+{	
 	public:
-		UART_Init();
-		UART_Write(unsigned char* tx_buffer, size_t size);
-		UART_Read(unsigned char* rx_buffer);
-		UART_Close();
+		int serial_port;
+		void UART_Init();
+		void UART_Write(unsigned char* tx_buffer, size_t size);
+		int UART_Read(unsigned char* rx_buffer);
+		void UART_Close();
 }
